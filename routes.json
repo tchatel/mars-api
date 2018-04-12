@@ -1,0 +1,6 @@
+{
+  "/rovers/:rover/photos": "/photos?rover.name=:rover",
+  "/rovers/:rover/photos\\?sol=:sol": "/photos?rover.name=:rover&sol=:sol",
+  "/rovers/:rover/photos\\?camera=:camera": "/photos?rover.name=:rover&camera.name=:camera",
+  "/rovers/:rover/photos/:id": "/photos/:id"
+}
