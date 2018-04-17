@@ -1,255 +1,164 @@
-<h1 id="devoxxfr2018angular">DevoxxFR 2018 : Angular</h1>
-
-<h2 id="handsonlabinitiationangular6parlapratique">Hands-on Lab : initiation à Angular 6 par la pratique</h2>
-
-<h2 id="outilsncessaires">Outils nécessaires</h2>
-
-<ul>
-    <li>NodeJS</li>
-
-    <li>Git</li>
-
-    <li>IDE : WebStorm (démo 30 jours, recommandé) ou Visual Studio Code</li>
-</ul>
-
-<h2 id="installationduworkshop">Installation du workshop</h2>
-
-<ul>
-    <li>Angular-CLI <strong>version 6.0.0-rc.5</strong> (après avoir désinstallé une éventuelle
-        version antérieure) :</li>
-</ul>
-
-<pre><code>npm uninstall -g @angular/cli
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="md.css">
+</head>
+<body>
+<article class="markdown-body entry-content" itemprop="text"><h1><a id="user-content-devoxxfr-2018--angular" class="anchor" aria-hidden="true" href="#devoxxfr-2018--angular"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DevoxxFR 2018 : Angular</h1>
+    <h2><a id="user-content-hands-on-lab--initiation-à-angular-6-par-la-pratique" class="anchor" aria-hidden="true" href="#hands-on-lab--initiation-à-angular-6-par-la-pratique"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hands-on Lab : initiation à Angular 6 par la pratique</h2>
+    <h2><a id="user-content-outils-nécessaires" class="anchor" aria-hidden="true" href="#outils-nécessaires"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Outils nécessaires</h2>
+    <ul>
+        <li>NodeJS</li>
+        <li>Git</li>
+        <li>IDE : WebStorm (démo 30 jours, recommandé) ou Visual Studio Code</li>
+    </ul>
+    <h2><a id="user-content-installation-du-workshop" class="anchor" aria-hidden="true" href="#installation-du-workshop"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation du workshop</h2>
+    <ul>
+        <li>Angular-CLI <strong>version 6.0.0-rc.5</strong> (après avoir désinstallé une éventuelle
+            version antérieure) :</li>
+    </ul>
+    <pre><code>npm uninstall -g @angular/cli
 npm install -g @angular/cli@6.0.0-rc.5
 </code></pre>
-
-<ul>
-    <li>Cloner le projet mars-api et démarrer le serveur d'API :</li>
-</ul>
-
-<pre><code>git clone https://github.com/tchatel/mars-api.git
+    <ul>
+        <li>Cloner le projet mars-api et démarrer le serveur d'API :</li>
+    </ul>
+    <pre><code>git clone https://github.com/tchatel/mars-api.git
 cd mars-api
 npm install
 npm run api
 </code></pre>
-
-<ul>
-    <li>Télécharger et décompresser le fichier suivant (présent sur le serveur d'API), contenant surtout
-        des templates HTML et des styles CSS fournis pour le workshop :</li>
-</ul>
-
-<pre><code>http://localhost:3390/mars-files.zip
+    <p>Vous devez maintenant pouvoir afficher cet énoncé à l'adresse <code>http://localhost:3390/</code></p>
+    <ul>
+        <li>Télécharger et décompresser le fichier suivant (présent sur le serveur d'API), contenant surtout
+            des templates HTML et des styles CSS fournis pour le workshop :</li>
+    </ul>
+    <pre><code>http://localhost:3390/mars-files.zip
 </code></pre>
-
-<ul>
-    <li>Créer un nouveau projet Angular avec routage, nommé <strong>mars-lab</strong>, lui ajouter un dépôt
-        Git remote contenant des branches correspondant à toutes les étapes du workshop, et démarrer
-        le serveur de développement :</li>
-</ul>
-
-<pre><code>ng new mars-lab --routing
+    <ul>
+        <li>Créer un nouveau projet Angular avec routage, nommé <strong>mars-lab</strong>, lui ajouter un dépôt
+            Git remote contenant des branches correspondant à toutes les étapes du workshop, et démarrer
+            le serveur de développement :</li>
+    </ul>
+    <pre><code>ng new mars-lab --routing
 cd mars-lab
 git remote add origin https://github.com/tchatel/mars-lab.git
 git pull
 ng serve
 </code></pre>
-
-<h2 id="etapesduworkshop">Etapes du workshop</h2>
-
-<h3 id="tape01pagedaccueil">étape 01 : page d’accueil</h3>
-
-<ul>
-    <li>changer le titre <code>&lt;h1&gt;</code>, laisser <router-outlet></li>
-
-    <li><code>ng generate component home-page</code></li>
-
-    <li>définir un route par défaut vers ce composant HomePageComponent</li>
-
-    <li>image d’accueil : <code>http://localhost:3390/images/rovers/rovers.jpg</code></li>
-
-    <li>fichier style.css fourni dans <strong>mars-files.zip</strong></li>
-</ul>
-
-<h3 id="tape02moduleetpagerovers">étape 02 : module et page rovers</h3>
-
-<ul>
-    <li><code>ng generate module rovers --routing</code></li>
-
-    <li><code>ng generate component rovers/page-rovers-list</code></li>
-
-    <li>importer RoversModule dans AppModule</li>
-
-    <li>ajouter une route dans rovers-routing</li>
-
-    <li>vérifier en tapant à la main l’url : <code>http://localhost:4200/rovers</code> (doit afficher <em>"page-rovers-list works!"</em>)</li>
-</ul>
-
-<h3 id="tape03serviceetjsondesrovers">étape 03 : service et JSON des rovers</h3>
-
-<ul>
-    <li>créer un répertoire core/model dans app</li>
-
-    <li>copier core/model/model.ts (fourni) : interfaces Rover et autres</li>
-
-    <li><code>ng generate module core/services</code></li>
-
-    <li><code>ng generate service core/services/rovers</code></li>
-
-    <li>mettre le provider du service dans ServicesModule</li>
-
-    <li>importer les modules ServicesModule et HttpClientModule dans AppModule</li>
-
-    <li>écrire une méthode list() dans RoversService pour charger la liste des rovers</li>
-
-    <li>afficher le JSON</li>
-</ul>
-
-<h3 id="tape04affichagedelalistedesrovers">étape 04 : affichage de la liste des rovers</h3>
-
-<ul>
-    <li><code>ng generate component rovers/rover-item</code></li>
-
-    <li>ajouter un <em>input</em> au composant : <code>@Input() rover: Rover;</code></li>
-
-    <li>afficher ce composant en bouclant sur la liste des rovers</li>
-
-    <li>copier les fichiers HTML et CSS pour RoverItemComponent</li>
-
-    <li>remplacer les données en dur par des bindings dans son template HTML</li>
-</ul>
-
-<h3 id="tape05dtailsdesroversaslectiondunrover">étape 05 : détails des rovers - a) sélection d’un rover</h3>
-
-<ul>
-    <li><code>ng generate component rovers/rover-details</code></li>
-
-    <li>ajouter un <em>output</em> au composant RoverItemComponent</li>
-
-    <li>dans PageRoversList, mettre une propriété contenant le rover sélectionné</li>
-
-    <li>mettre un <em>input</em> dans RoverDetailsComponent</li>
-
-    <li>afficher juste le JSON du rover sélectionné</li>
-</ul>
-
-<h3 id="tape06dtailsdesroversbdonnestexteethtml">étape 06 : détails des rovers - b) données texte et HTML</h3>
-
-<ul>
-    <li>RoverDetailsComponent : HTML et CSS fournis</li>
-
-    <li>mettre des bindings dans le template pour la date d’atterrissage et de lancement, le statut, et max sol</li>
-
-    <li>afficher la liste des caméras (séparées par une virgule)</li>
-
-    <li>afficher la description (contenant du HTML)</li>
-</ul>
-
-<h3 id="tape07dtailsdesroversbformatagedesdatesetstatutsavecdespipes">étape 07 : détails des rovers - b) formatage des dates et statuts avec des pipes</h3>
-
-<ul>
-    <li>pipe “status” pour le statut (en service / HS) :</li>
-
-    <li><code>ng generate module core/widgets</code></li>
-
-    <li><code>ng generate pipe core/widgets/status --export</code> </li>
-
-    <li>et importer le module widgets dans RoversModule</li>
-
-    <li>pipe “dateIso” pour les dates :</li>
-
-    <li><code>ng generate pipe core/widgets/date-iso --export</code> </li>
-</ul>
-
-<h3 id="tape08animation">étape 08 : animation</h3>
-
-<ul>
-    <li>importer BrowserAnimationsModule dans AppModule</li>
-
-    <li><code>[@details]="selectedRover.name"</code></li>
-
-    <li>CSS: <code>rover-details {display: block;}</code></li>
-
-    <li>fichier page-rovers-list.ts fourni</li>
-</ul>
-
-<h3 id="tape09moduleetpagephotos">étape 09 : module et page photos</h3>
-
-<ul>
-    <li><code>ng generate module photos --routing</code></li>
-
-    <li><code>ng generate component photos/page-photos-list</code></li>
-
-    <li>importer PhotosModule dans AppModule</li>
-
-    <li>définir la route ‘/photos’</li>
-
-    <li>créer un menu pour naviguer :</li>
-
-    <li><code>ng generate component core/widgets/menu --export</code> </li>
-
-    <li>importer WidgetsModule dans AppModule</li>
-
-    <li>importer RouterModule dans WidgetsModule</li>
-
-    <li>mettre la balise <code>&lt;app-menu&gt;</code> à la place du titre</li>
-
-    <li>CSS fourni pour MenuComponent</li>
-
-    <li>HTML : <code>&lt;div&gt;&lt;nav&gt;&lt;a&gt;&lt;/a&gt;&lt;a&gt;&lt;/a&gt;&lt;/nav&gt;&lt;h1&gt;&lt;/h1&gt;&lt;/div&gt;</code></li>
-</ul>
-
-<h3 id="tape10recherchedephotos">étape 10 : recherche de photos</h3>
-
-<ul>
-    <li><code>ng generate service core/services/photos</code></li>
-
-    <li>mettre le provider du service dans ServicesModule</li>
-
-    <li>méthode search avec rover dans l’URL + query string (caméra &amp; sol)</li>
-
-    <li>affichage du résultat en JSON pour des paramètres en dur (Spirit, NAVCAM, 100)</li>
-</ul>
-
-<h3 id="tape11affichagedesphotos">étape 11 : affichage des photos</h3>
-
-<ul>
-    <li><code>ng generate component photos/photo-item</code></li>
-
-    <li>afficher : nombre de photos + items répétés</li>
-
-    <li>HTML + CSS fournis</li>
-</ul>
-
-<h3 id="tape12formulairederecherchedesphotos">étape 12 : formulaire de recherche des photos</h3>
-
-<ul>
-    <li><code>ng generate component photos/photo-search-form</code></li>
-
-    <li>formulaire : <code>&lt;form&gt;Rover&lt;select&gt;&lt;/select&gt; - Caméra&lt;select&gt;&lt;/select&gt; - sol&lt;input type=number&gt;&lt;/form&gt;</code></li>
-
-    <li><code>[(ngModel)]</code> + <code>name</code>, <code>[ngValue]</code> </li>
-
-    <li><code>@Output() search</code>, avec un type SearchEvent à définir</li>
-
-    <li>validation : rover required, désactiver le bouton si invalide</li>
-</ul>
-
-<h3 id="tape13photoengrand">étape 13 : photo en grand</h3>
-
-<ul>
-    <li><code>ng generate component photos/page-big-photo</code></li>
-
-    <li>ajouter la route dans PhotosRoutingModule</li>
-
-    <li>le lien sur la vignette devient <code>&lt;a [routerLink]="['/photos', photo.rover.name, photo.id]"&gt;</code></li>
-
-    <li>méthode <code>get(rover: string, photoId: number)</code> dans PhotosService, url = <code>http://localhost:3390/rovers/${rover}/photos/${photoId}</code></li>
-
-    <li>dans PageBigPhotoComponent, injecter ActivatedRoute, et charger la bonne photo en
-        fonction des paramètres de l'URL </li>
-</ul>
-
-<h3 id="branchenasa">branche 'nasa' :</h3>
-
-<p>C'est une version du projet n'utilisant pas l'API locale, mais la vraie API de la NASA, si vous voulez
-    consulter toutes les photos prises par les 3 rovers.</p>
+    <h2><a id="user-content-etapes-du-workshop" class="anchor" aria-hidden="true" href="#etapes-du-workshop"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Etapes du workshop</h2>
+    <h3><a id="user-content-étape-01--page-daccueil" class="anchor" aria-hidden="true" href="#étape-01--page-daccueil"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>étape 01 : page d’accueil</h3>
+    <ul>
+        <li>changer le titre <code>&lt;h1&gt;</code>, laisser </li>
+        <li><code>ng generate component home-page</code></li>
+        <li>définir un route par défaut vers ce composant HomePageComponent</li>
+        <li>image d’accueil : <code>http://localhost:3390/images/rovers/rovers.jpg</code></li>
+        <li>fichier style.css fourni dans <strong>mars-files.zip</strong></li>
+    </ul>
+    <h3><a id="user-content-étape-02--module-et-page-rovers" class="anchor" aria-hidden="true" href="#étape-02--module-et-page-rovers"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>étape 02 : module et page rovers</h3>
+    <ul>
+        <li><code>ng generate module rovers --routing</code></li>
+        <li><code>ng generate component rovers/page-rovers-list</code></li>
+        <li>importer RoversModule dans AppModule</li>
+        <li>ajouter une route dans rovers-routing</li>
+        <li>vérifier en tapant à la main l’url : <code>http://localhost:4200/rovers</code> (doit afficher <em>"page-rovers-list works!"</em>)</li>
+    </ul>
+    <h3><a id="user-content-étape-03--service-et-json-des-rovers" class="anchor" aria-hidden="true" href="#étape-03--service-et-json-des-rovers"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>étape 03 : service et JSON des rovers</h3>
+    <ul>
+        <li>créer un répertoire core/model dans app</li>
+        <li>copier core/model/model.ts (fourni) : interfaces Rover et autres</li>
+        <li><code>ng generate module core/services</code></li>
+        <li><code>ng generate service core/services/rovers</code></li>
+        <li>mettre le provider du service dans ServicesModule</li>
+        <li>importer les modules ServicesModule et HttpClientModule dans AppModule</li>
+        <li>écrire une méthode list() dans RoversService pour charger la liste des rovers</li>
+        <li>afficher le JSON</li>
+    </ul>
+    <h3><a id="user-content-étape-04--affichage-de-la-liste-des-rovers" class="anchor" aria-hidden="true" href="#étape-04--affichage-de-la-liste-des-rovers"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>étape 04 : affichage de la liste des rovers</h3>
+    <ul>
+        <li><code>ng generate component rovers/rover-item</code></li>
+        <li>ajouter un <em>input</em> au composant : <code>@Input() rover: Rover;</code></li>
+        <li>afficher ce composant en bouclant sur la liste des rovers</li>
+        <li>copier les fichiers HTML et CSS pour RoverItemComponent</li>
+        <li>remplacer les données en dur par des bindings dans son template HTML</li>
+    </ul>
+    <h3><a id="user-content-étape-05--détails-des-rovers---a-sélection-dun-rover" class="anchor" aria-hidden="true" href="#étape-05--détails-des-rovers---a-sélection-dun-rover"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>étape 05 : détails des rovers - a) sélection d’un rover</h3>
+    <ul>
+        <li><code>ng generate component rovers/rover-details</code></li>
+        <li>ajouter un <em>output</em> au composant RoverItemComponent</li>
+        <li>dans PageRoversList, mettre une propriété contenant le rover sélectionné</li>
+        <li>mettre un <em>input</em> dans RoverDetailsComponent</li>
+        <li>afficher juste le JSON du rover sélectionné</li>
+    </ul>
+    <h3><a id="user-content-étape-06--détails-des-rovers---b-données-texte-et-html" class="anchor" aria-hidden="true" href="#étape-06--détails-des-rovers---b-données-texte-et-html"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>étape 06 : détails des rovers - b) données texte et HTML</h3>
+    <ul>
+        <li>RoverDetailsComponent : HTML et CSS fournis</li>
+        <li>mettre des bindings dans le template pour la date d’atterrissage et de lancement, le statut, et max sol</li>
+        <li>afficher la liste des caméras (séparées par une virgule)</li>
+        <li>afficher la description (contenant du HTML)</li>
+    </ul>
+    <h3><a id="user-content-étape-07--détails-des-rovers---b-formatage-des-dates-et-statuts-avec-des-pipes" class="anchor" aria-hidden="true" href="#étape-07--détails-des-rovers---b-formatage-des-dates-et-statuts-avec-des-pipes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>étape 07 : détails des rovers - b) formatage des dates et statuts avec des pipes</h3>
+    <ul>
+        <li>pipe “status” pour le statut (en service / HS) :</li>
+        <li><code>ng generate module core/widgets</code></li>
+        <li><code>ng generate pipe core/widgets/status --export</code></li>
+        <li>et importer le module widgets dans RoversModule</li>
+        <li>pipe “dateIso” pour les dates :</li>
+        <li><code>ng generate pipe core/widgets/date-iso --export</code></li>
+    </ul>
+    <h3><a id="user-content-étape-08--animation" class="anchor" aria-hidden="true" href="#étape-08--animation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>étape 08 : animation</h3>
+    <ul>
+        <li>importer BrowserAnimationsModule dans AppModule</li>
+        <li><code>[@details]="selectedRover.name"</code></li>
+        <li>CSS: <code>rover-details {display: block;}</code></li>
+        <li>fichier page-rovers-list.ts fourni</li>
+    </ul>
+    <h3><a id="user-content-étape-09--module-et-page-photos" class="anchor" aria-hidden="true" href="#étape-09--module-et-page-photos"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>étape 09 : module et page photos</h3>
+    <ul>
+        <li><code>ng generate module photos --routing</code></li>
+        <li><code>ng generate component photos/page-photos-list</code></li>
+        <li>importer PhotosModule dans AppModule</li>
+        <li>définir la route ‘/photos’</li>
+        <li>créer un menu pour naviguer :</li>
+        <li><code>ng generate component core/widgets/menu --export</code></li>
+        <li>importer WidgetsModule dans AppModule</li>
+        <li>importer RouterModule dans WidgetsModule</li>
+        <li>mettre la balise <code>&lt;app-menu&gt;</code> à la place du titre</li>
+        <li>CSS fourni pour MenuComponent</li>
+        <li>HTML : <code>&lt;div&gt;&lt;nav&gt;&lt;a&gt;&lt;/a&gt;&lt;a&gt;&lt;/a&gt;&lt;/nav&gt;&lt;h1&gt;&lt;/h1&gt;&lt;/div&gt;</code></li>
+    </ul>
+    <h3><a id="user-content-étape-10--recherche-de-photos" class="anchor" aria-hidden="true" href="#étape-10--recherche-de-photos"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>étape 10 : recherche de photos</h3>
+    <ul>
+        <li><code>ng generate service core/services/photos</code></li>
+        <li>mettre le provider du service dans ServicesModule</li>
+        <li>méthode search avec rover dans l’URL + query string (caméra &amp; sol)</li>
+        <li>affichage du résultat en JSON pour des paramètres en dur (Spirit, NAVCAM, 100)</li>
+    </ul>
+    <h3><a id="user-content-étape-11--affichage-des-photos" class="anchor" aria-hidden="true" href="#étape-11--affichage-des-photos"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>étape 11 : affichage des photos</h3>
+    <ul>
+        <li><code>ng generate component photos/photo-item</code></li>
+        <li>afficher : nombre de photos + items répétés</li>
+        <li>HTML + CSS fournis</li>
+    </ul>
+    <h3><a id="user-content-étape-12--formulaire-de-recherche-des-photos" class="anchor" aria-hidden="true" href="#étape-12--formulaire-de-recherche-des-photos"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>étape 12 : formulaire de recherche des photos</h3>
+    <ul>
+        <li><code>ng generate component photos/photo-search-form</code></li>
+        <li>formulaire : <code>&lt;form&gt;Rover&lt;select&gt;&lt;/select&gt; - Caméra&lt;select&gt;&lt;/select&gt; - sol&lt;input type=number&gt;&lt;/form&gt;</code></li>
+        <li><code>[(ngModel)]</code> + <code>name</code>, <code>[ngValue]</code></li>
+        <li><code>@Output() search</code>, avec un type SearchEvent à définir</li>
+        <li>validation : rover required, désactiver le bouton si invalide</li>
+    </ul>
+    <h3><a id="user-content-étape-13--photo-en-grand" class="anchor" aria-hidden="true" href="#étape-13--photo-en-grand"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>étape 13 : photo en grand</h3>
+    <ul>
+        <li><code>ng generate component photos/page-big-photo</code></li>
+        <li>ajouter la route dans PhotosRoutingModule</li>
+        <li>le lien sur la vignette devient <code>&lt;a [routerLink]="['/photos', photo.rover.name, photo.id]"&gt;</code></li>
+        <li>méthode <code>get(rover: string, photoId: number)</code> dans PhotosService, url = <code>http://localhost:3390/rovers/${rover}/photos/${photoId}</code></li>
+        <li>dans PageBigPhotoComponent, injecter ActivatedRoute, et charger la bonne photo en
+            fonction des paramètres de l'URL</li>
+    </ul>
+    <h3><a id="user-content-branche-nasa-" class="anchor" aria-hidden="true" href="#branche-nasa-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>branche 'nasa' :</h3>
+    <p>C'est une version du projet n'utilisant pas l'API locale, mais la vraie API de la NASA, si vous voulez
+        consulter toutes les photos prises par les 3 rovers.</p>
+</article>
+</body>
+</html>
