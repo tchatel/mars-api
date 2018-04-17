@@ -23,6 +23,8 @@ cd mars-api
 npm install
 npm run api 
 ```
+Vous devez maintenant pouvoir afficher cet énoncé à l'adresse `http://localhost:3390/`
+
 
 * Télécharger et décompresser le fichier suivant (présent sur le serveur d'API), contenant surtout 
 des templates HTML et des styles CSS fournis pour le workshop :
