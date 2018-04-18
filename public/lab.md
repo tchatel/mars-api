@@ -48,7 +48,7 @@ ng serve
 ### étape 01 : page d’accueil
 * changer le titre `<h1>`, laisser <router-outlet>
 * `ng generate component home-page`
-* définir un route par défaut vers ce composant HomePageComponent
+* définir une route par défaut vers ce composant HomePageComponent
 * image d’accueil : `http://localhost:3390/images/rovers/rovers.jpg`
 * fichier style.css fourni dans **mars-files.zip**
 
