@@ -3,7 +3,7 @@
 
 ## Outils nécessaires
 
-* NodeJS
+* NodeJS, version 8 ou 9
 * Git
 * IDE : WebStorm (démo 30 jours, recommandé) ou Visual Studio Code
 
