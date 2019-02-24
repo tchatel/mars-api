@@ -242,7 +242,7 @@ _Pour la recherche, le nom du rover sera obligatoire, car l'API en a besoin._
   le formulaire est invalide
 
 ### étape 27 : message d’erreur
-_On va afficher un message demandant de sélectionner un rover, si le <select> correspondant est en erreur._
+_On va afficher un message demandant de sélectionner un rover, si le `<select>` correspondant est en erreur._
 * ajouter à la balise `<select>` un attribut `#roverInfo="ngModel"` pour récupérer dans une variable de template 
   nommée _roverInfo_ l’instance de la directive _NgModel_ appliquée à cet élément HTML
 * ajouter après le bouton un message, affiché seulement si le champ a une erreur _'required'_ :<br>
