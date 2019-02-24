@@ -49,7 +49,7 @@
       "name": "Opportunity",
       "landing_date": "2004-01-25",
       "launch_date": "2003-07-07",
-      "status": "active",
+      "status": "complete",
       "max_sol": 5051,
       "max_date": "2018-04-10",
       "total_photos": 196434,

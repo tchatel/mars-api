@@ -9,7 +9,7 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "json-server": "^0.14.0"
+  "dependencies": {
+    "json-server": "^0.14.2"
   }
 }
