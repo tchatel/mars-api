@@ -7,18 +7,22 @@
 * IDE : [WebStorm](https://www.jetbrains.com/webstorm/download/#section=mac) ou autre IDE de JetBrains (démo 30 jours, 
   **recommandé pour les débutants**) ou [Visual Studio Code](https://code.visualstudio.com/download) (gratuit)
 * [NodeJS](https://nodejs.org/en/), version 10 minimum
+  * Vérifier qu'il est dans le _path_ et que la version est correcte, en tapant dans un terminal : `node --version` 
 * [Git](https://git-scm.com/downloads)
+  * Vérifier qu'il est dans le _path_ et que la version est correcte, en tapant dans un terminal : `git --version` 
 * extension [Augury](https://augury.rangle.io/) pour Chrome et Firefox
 
 
 ## Installation du workshop
 
-* Angular-CLI **version 7.3.1** (après avoir désinstallé une éventuelle 
+* Installer Angular-CLI **version 7.3.1** (après avoir désinstallé une éventuelle 
 version antérieure) :
 ```
 npm uninstall -g @angular/cli
 npm install -g @angular/cli@7.3.1 
 ```
+
+* Vérifier que ça a installé une commande `ng` accessible dans le _path_ et que sa version est correcte, en tapant dans un terminal : `ng --version` 
 
 * Cloner le projet mars-api, pour démarrer le serveur d'API (et le laisser tourner) :
 ```
