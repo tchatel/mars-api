@@ -99,7 +99,7 @@ ng serve
 
 
 ### étape 07 : méthode du service chargeant la liste des rovers
-* créer un répertoire _core/model_ dans le répertoire _app_ et y copier _core/model/model.ts_ 
+* créer un répertoire _model_ dans le répertoire _app_ et y copier _model/model.ts_ 
   (fourni dans le fichier zip) : interfaces Rover, Camera et Photo 
 * écrire une méthode `list()` dans RoverApiService pour charger la liste des rovers, en faisant une requête GET à 
   l’URL `http://localhost:3390/rovers`
@@ -118,7 +118,7 @@ ng serve
 * dans le `<div>` répété, afficher le nom du rover
 
 ### étape 10 : affichage de la liste des rovers
-* `ng generate component rovers/rover-item`
+* `ng generate component rover/rover-item`
 * écraser les fichiers HTML et CSS du RoverItemComponent par ceux fournis
 * afficher ce composant répété pour chacun des rovers, dans le template du RoverListComponent, avec une 
   balise `<app-rover-item>` et la même directive `*ngFor` que précédemment
@@ -130,7 +130,7 @@ ng serve
 
 ### étape 11 : griser les images des rovers qui ne sont plus actifs
 * dans RoverItemComponent, ajouter une méthode `isRoverDead()` renvoyant _true_ si `rover.status` est différent de `'active'`
-* dans le template, mettre une classe CSS conditionnelle sur le premier `<div>` : `[class.dead]=”isRoverDead()”`
+* dans le template, mettre une classe CSS conditionnelle sur le premier `<div>` : `[class.dead]="isRoverDead()"`
 
 ### étape 12 : sélection d’un rover de la liste
 * ajouter un output au composant RoverItemComponent :<br>
@@ -157,6 +157,8 @@ ng serve
 * écraser les fichiers HTML et CSS du RoverDetailsComponent avec ceux fournis
 * afficher ce composant dans le template de RoverListComponent, à la place du JSON de l’étape précédente
 * mettre un _input_ dans RoverDetailsComponent, pour lui passer le rover concerné
+* dans son template, utiliser `*ngIf` pour conditionner le gros `<div>` au fait d'avoir un rover sélectionné, pour 
+  ne pas avoir une erreur quand l'input _rover_ est _undefined_ :  `*ngIf="rover"`
 * mettre des bindings dans le template pour les propriétés suivantes du rover : `name`, `launch_date`, `landing_date`, 
   et `max_sol` (nombre de jours solaires martiens en activité)
 
@@ -192,7 +194,7 @@ _Il n’est pas logique que le composant affichant les détails fasse partie du 
 * ajouter la propriété `selectedRover` dans RoverPageComponent (sans enlever celle de RoverListComponent), 
   et l’alimenter, quand le composant PageRoverList émet un événement `select`, avec la valeur de l’événement
 * ajouter cet output `select` dans RoverListComponent
-* toujours dans RoverListComponent, ajouter une méthode `selectComponent` prenant un rover en paramètre, qui met ce 
+* toujours dans RoverListComponent, ajouter une méthode `selectRover` prenant un rover en paramètre, qui met ce 
   rover dans la propriété `selectedRover` et l’émet comme valeur de l’événement `select`
 * dans son template _rover-list.component.html_, appeler cette méthode `selectRover` quand le composant enfant 
   RoverItemComponent émet son événement `select`
@@ -202,7 +204,7 @@ _Il n’est pas logique que le composant affichant les détails fasse partie du 
 * `ng generate component photo/photo-page`
 * importer PhotoModule dans AppModule
 * définir dans _photos-routing.module.ts_ la route `'photo'` affichant le PhotoPageComponent
-* vérifier que ça afffiche _“photo-page works!”_ quand on clique sur le lien _“Photos”_ du menu
+* vérifier que ça afffiche _“photo-page works!”_ quand on clique sur le lien _Photos_ du menu
 
 ### étape 22 : formulaire de recherche des photos
 * `ng generate component photo/photo-search-form`
@@ -230,7 +232,8 @@ _Il n’est pas logique que le composant affichant les détails fasse partie du 
 
 ### étape 25 : formulaire : liste déroulante des caméras
 * proposer dans la liste déroulante des caméras les noms des caméras du rover sélectionné
-* pour ne pas avoir une erreur quand il n’y a pas de rover sélectionné, on peut utiliser l’opérateur Elvis : `?.` : <br>
+* pour ne pas avoir une erreur quand il n’y a pas de rover sélectionné, on peut utiliser le _safe navigation operator_ 
+  (ou opérateur Elvis) : <br>
   `*ngFor="let camera of formData.rover?.cameras"`
 * ajouter les attributs `[(ngModel)]` et `name` sur la balise `<select>`, et l’attribut `[ngValue]` sur les 
   balises `<option>`, pour récupérer l’objet caméra complet dans la propriété `formData` 
