@@ -165,7 +165,7 @@ ng serve
     <h3 id="tape07mthodeduservicechargeantlalistedesrovers">étape 07 : méthode du service chargeant la liste des rovers</h3>
 
     <ul>
-        <li>créer un répertoire <em>core/model</em> dans le répertoire <em>app</em> et y copier <em>core/model/model.ts</em>
+        <li>créer un répertoire <em>model</em> dans le répertoire <em>app</em> et y copier <em>model/model.ts</em>
             (fourni dans le fichier zip) : interfaces Rover, Camera et Photo </li>
 
         <li>écrire une méthode <code>list()</code> dans RoverApiService pour charger la liste des rovers, en faisant une requête GET à
@@ -197,7 +197,7 @@ ng serve
     <h3 id="tape10affichagedelalistedesrovers">étape 10 : affichage de la liste des rovers</h3>
 
     <ul>
-        <li><p><code>ng generate component rovers/rover-item</code></p></li>
+        <li><p><code>ng generate component rover/rover-item</code></p></li>
 
         <li><p>écraser les fichiers HTML et CSS du RoverItemComponent par ceux fournis</p></li>
 
@@ -217,7 +217,7 @@ ng serve
     <ul>
         <li>dans RoverItemComponent, ajouter une méthode <code>isRoverDead()</code> renvoyant <em>true</em> si <code>rover.status</code> est différent de <code>'active'</code></li>
 
-        <li>dans le template, mettre une classe CSS conditionnelle sur le premier <code>&lt;div&gt;</code> : <code>[class.dead]=”isRoverDead()”</code></li>
+        <li>dans le template, mettre une classe CSS conditionnelle sur le premier <code>&lt;div&gt;</code> : <code>[class.dead]="isRoverDead()"</code></li>
     </ul>
 
     <h3 id="tape12slectiondunroverdelaliste">étape 12 : sélection d’un rover de la liste</h3>
@@ -262,6 +262,9 @@ ng serve
         <li>afficher ce composant dans le template de RoverListComponent, à la place du JSON de l’étape précédente</li>
 
         <li>mettre un <em>input</em> dans RoverDetailsComponent, pour lui passer le rover concerné</li>
+
+        <li>dans son template, utiliser <code>*ngIf</code> pour conditionner le gros <code>&lt;div&gt;</code> au fait d'avoir un rover sélectionné, pour
+            ne pas avoir une erreur quand l'input <em>rover</em> est <em>undefined</em> :  <code>*ngIf="rover"</code></li>
 
         <li>mettre des bindings dans le template pour les propriétés suivantes du rover : <code>name</code>, <code>launch_date</code>, <code>landing_date</code>,
             et <code>max_sol</code> (nombre de jours solaires martiens en activité)</li>
@@ -326,7 +329,7 @@ ng serve
 
         <li>ajouter cet output <code>select</code> dans RoverListComponent</li>
 
-        <li>toujours dans RoverListComponent, ajouter une méthode <code>selectComponent</code> prenant un rover en paramètre, qui met ce
+        <li>toujours dans RoverListComponent, ajouter une méthode <code>selectRover</code> prenant un rover en paramètre, qui met ce
             rover dans la propriété <code>selectedRover</code> et l’émet comme valeur de l’événement <code>select</code></li>
 
         <li>dans son template <em>rover-list.component.html</em>, appeler cette méthode <code>selectRover</code> quand le composant enfant
@@ -344,7 +347,7 @@ ng serve
 
         <li>définir dans <em>photos-routing.module.ts</em> la route <code>'photo'</code> affichant le PhotoPageComponent</li>
 
-        <li>vérifier que ça afffiche <em>“photo-page works!”</em> quand on clique sur le lien <em>“Photos”</em> du menu</li>
+        <li>vérifier que ça afffiche <em>“photo-page works!”</em> quand on clique sur le lien <em>Photos</em> du menu</li>
     </ul>
 
     <h3 id="tape22formulairederecherchedesphotos">étape 22 : formulaire de recherche des photos</h3>
@@ -396,7 +399,8 @@ ng serve
     <ul>
         <li>proposer dans la liste déroulante des caméras les noms des caméras du rover sélectionné</li>
 
-        <li>pour ne pas avoir une erreur quand il n’y a pas de rover sélectionné, on peut utiliser l’opérateur Elvis : <code>?.</code> : <br>
+        <li>pour ne pas avoir une erreur quand il n’y a pas de rover sélectionné, on peut utiliser le <em>safe navigation operator</em>
+            (ou opérateur Elvis) : <br>
             <code>*ngFor="let camera of formData.rover?.cameras"</code></li>
 
         <li>ajouter les attributs <code>[(ngModel)]</code> et <code>name</code> sur la balise <code>&lt;select&gt;</code>, et l’attribut <code>[ngValue]</code> sur les
