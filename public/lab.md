@@ -34,8 +34,9 @@ npm run api
 Vous devez maintenant pouvoir afficher cet énoncé à l'adresse `http://localhost:3390/`
 
 
-* Télécharger et décompresser le fichier suivant (présent sur le serveur d'API), contenant surtout 
-des templates HTML et des styles CSS fournis pour le workshop :
+* Télécharger et décompresser (**en dehors du projet**) le fichier suivant, présent sur le serveur d'API. Il contient surtout 
+des templates HTML et des styles CSS, qu'on utilisera dans les différentes étapes du workshop, après création des composants
+correspondants.
 ```
 http://localhost:3390/mars-files.zip
 ```
